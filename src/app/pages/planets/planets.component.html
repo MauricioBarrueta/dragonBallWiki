@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="paginator">
+  <a tabindex="0" class="btn elevated rounded" (click)="prevPage()" [ngClass]="prev !== '' ? '' : 'disable' ">&#xf0d9; Anterior</a>
+  <a class="to-first" (click)="page = 1; getPlanetsList()" *ngIf="page > 1">&#xf100; Volver a la página 1</a>
+  <span>Página {{page}} de {{meta$.totalPages}}</span>
+  <a tabindex="0" class="btn elevated rounded" (click)="nextPage()" [ngClass]="next !== '' ? '' : 'disable' ">Siguiente &#xf0da;</a>
+</div>
+
+<h1 class="title"><img src="{{icon}}" height="30"> Lista de planetas <img src="{{icon2}}" height="28"></h1>
+
+<!-- Alert Text -->
+<span *ngIf="planets$.length < 1" class="alert-text">{{alert}}</span>
+
+<div class="planets-container">
+  <div class="card" *ngFor="let planet of planets$">
+    <span class="card-title">{{planet.name}}</span>
+    <div class="card-image">
+      <img src="{{planet.image}}">
+    </div>
+    <div class="card-content">
+      <span>Estado actual:<p [textContent]="planet.isDestroyed === true ? 'Destruido' : 'Ileso'"></p></span>
+      <a class="details" (click)="redirectToPlanetDetails(planet.id)">Más información &#xf245;</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<div class="paginator">
+    <a tabindex="0" class="btn elevated rounded" (click)="prevPage()" [ngClass]="prev !== '' ? '' : 'disable' ">&#xf0d9; Anterior</a>
+    <a class="to-first" (click)="page = 1; getCharactersByPage()" *ngIf="page > 1">&#xf100; Volver a la página 1</a>
+    <span>Página {{meta$.currentPage}} de {{meta$.totalPages}}</span>
+    <a tabindex="0" class="btn elevated rounded" (click)="nextPage()" [ngClass]="next !== '' ? '' : 'disable' ">Siguiente &#xf0da;</a>
+</div>
+
+<h1 class="title"><img src="{{icon1}}" height="30" style="margin-bottom: -9px;"> {{title}} <img src="{{icon2}}" height="25"></h1>
+
+<!-- Filter Inputs -->
+<div class="data-filter">
+  <div class="input-field outlined" style="margin: 0 4px;">
+    <input id="character_name" type="text" class="validate" placeholder=" " (input)="getCharacterByName()" [(ngModel)]="name">
+    <label class="active" for="character_name">Ingresa el nombre del personaje que buscas:</label>
+  </div>
+  
+  <!-- Dropdowns -->
+  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='genreDrop'
+    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7; Filtrar por género</a>
+  <ul id='genreDrop' class='dropdown-content'>
+    <li *ngFor="let gender of genderList$; let i = index" (click)="getGender(i)">&#xf0da; {{gender}}</li>    
+  </ul>  
+  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='raceDrop'
+    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7;  Filtrar por raza</a>
+  <ul id='raceDrop' class='dropdown-content'>
+    <li *ngFor="let race of raceList$; let i = index" (click)="getRace(i)">&#xf0da; {{race}}</li>    
+  </ul> 
+  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='affiliationDrop'
+    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7; Filtrar por afiliación</a>
+  <ul id='affiliationDrop' class='dropdown-content'>
+    <li *ngFor="let affiliation of affiliationList$; let i = index" (click)="getAffiliation(i)">&#xf0da; {{affiliation}}</li>    
+  </ul>
+  <!-- Reset Filters -->
+  <a class="reset-filters" *ngIf="gender !== '' || race !== '' || affiliation !== ''" (click)="getCharactersByPage()">Borrar filtros &#xf2ed;</a>
+</div>
+
+<!-- Alert Text -->
+<span *ngIf="characters$.length < 1" class="alert-text">{{alert}}</span>
+
+<div class="card-container">
+  <div class="card" *ngFor="let character of characters$">
+    <span class="card-title">{{character.name}}</span>
+    <div class="card-image">
+      <img src="{{character.image}}">
+    </div>
+    <div class="card-content">
+      <p><span>Género:</span> {{character.gender}}</p>
+      <p><span>Raza:</span> {{character.race}}</p>
+      <p><span>Afiliación:</span> {{character.affiliation}}</p>
+      <a class="details" (click)="getCharacterDetails(character.id)">Más información &#xf245;</a>
+    </div>
+  </div>
+</div>
+

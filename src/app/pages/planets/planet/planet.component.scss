@@ -1,0 +1,29 @@
+@import url(../../../app.component.scss);
+@import url(../planets.component.scss);
+
+.title { margin-top: 5px; }
+
+.back-btn {
+    img { margin-bottom: -7px; }
+}
+
+.planets-container {   
+    .card {
+        width: 600px; height: fit-content;       
+        .card-image {
+            img { 
+                height: 500px; object-fit: contain; 
+            }
+        }
+        .card-content {
+            justify-content: center; color: var(--deepCarrotOrange);       
+            a { 
+                font-size: 14px; color: var(--platinum);
+                padding: 5px 10px; border-right: 1px dashed var(--platinum);
+                transition: .3s; cursor: pointer;
+                &:hover { color: var(--pastelOrange); }
+                &:last-child { border-right: 0; }
+            }  
+        }        
+    }
+}

@@ -1,0 +1,28 @@
+@import url(../../app.component.scss);
+
+.title {    
+    line-height: 1.5;
+    border-top: 10px double var(--deepCarrotOrange);
+    padding-top: 1em; padding-bottom: 0;
+}
+
+.content {
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;
+    min-height: 68%; cursor: default;
+    background-color: var(--darkBlue); background: url('/background.webp') no-repeat bottom right / auto;
+    
+    .card {
+        width: 450px; height: 326.683px; z-index: 1;
+        .card-image {
+            img { max-width: 403px; height: 230px !important; }
+        }
+        .card-title {
+            margin: 0; padding: 0.5rem 0;
+            pointer-events: none; line-height: 2;
+            border: 1px solid var(--platinum); border-radius: 0 0 5px 5px;
+            img {
+                filter: invert(100%); margin-bottom: -8px;
+            }
+        }
+    }
+}

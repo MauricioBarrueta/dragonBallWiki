@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<a class="back-btn" (click)="redirectToList()">&#xf100;<img src="{{list}}" height="30"> Volver a la página {{page}}</a>
+
+<h1 class="title">Detalles del personaje '{{name}}' <i class="fa-solid fa-user-large"></i></h1>
+
+<div class="card-container">
+  <div class="card" *ngFor="let char of  character$">
+    <span class="card-title" [textContent]="nameValue === '' ? char.name : nameValue"></span>
+    <div class="card-image">      
+      <img [src]="imageValue === '' ? char.image : imageValue">   
+      <div class="activator waves-effect waves-light" style="position:absolute;top:0;bottom:0;right:0;left:0;"></div>
+      <div class="ki-stats">
+        <span class="stats">Ki:</span><p [textContent]="kiValue === '' ? char.ki : kiValue"></p>    
+      </div>
+    </div>
+    <div class="card-content">
+      <div class="image-buttons" title="Transformaciones">&#xe068;: 
+        <a (click)="imageValue = char.image; kiValue = char.ki; nameValue = char.name">Normal</a>
+        <a *ngFor="let t of transformations$" (click)="imageValue = t.image; kiValue = t.ki; nameValue = t.name">
+          {{t.name.includes(char.name) ? t.name.split(char.name)[1] : t.name}} <!-- [0]: Nombre, [1]: Transformación -->
+        </a>   
+      </div>
+      <a class="planet-btn" (click)="redirectToPlanet(planet$.id)"><img src="{{planet}}" height="22">: {{planet$.name}}</a>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title">{{char.name}} <i class="fa-solid fa-xmark right"></i></span>
+      <p class="card-desc">{{char.description}}</p>
+    </div>
+  </div>
+</div>

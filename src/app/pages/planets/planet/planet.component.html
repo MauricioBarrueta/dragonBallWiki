@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<a class="back-btn" (click)="redirectToList()">&#xf100;<img src="{{icon2}}" height="30"> Volver a la página {{page}} </a>
+
+<h1 class="title">Detalles del planeta '{{planetName}}' <img src="{{icon}}" height="25"></h1>
+
+<div class="planets-container">
+  <div class="card" *ngFor="let planet of planet$">
+    <span class="card-title">{{planet.name}}</span>
+    <div class="card-image">
+      <img src="{{planet.image}}">
+      <div class="activator waves-effect waves-light" style="position:absolute;top:0;bottom:0;right:0;left:0;"></div>
+    </div>
+    <div class="card-content" title="Personajes originarios del planeta">
+      &#xe533;: <a *ngFor="let char of characters$" (click)="getCharacterDetails(char.id)">{{char.name}}</a>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title">{{planet.name}} <i class="fa-solid fa-xmark right"></i></span>
+      <p class="card-desc">{{planet.description}}</p>
+    </div>
+  </div>
+</div>

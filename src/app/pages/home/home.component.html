@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<h1 class="title">Para navegar en el sitio, da clic &#xf245; en cualquiera de los botones de la parte inferior:</h1>
+
+<div class="content">    
+    <div class="card">
+        <div class="card-image" (click)="redirectToCharacters()">
+            <img src="/characters.webp" alt="" style="height: 230px !important;">
+        </div>
+        <span class="card-title"><img src="{{character}}" height="30"> Personajes</span>
+    </div>
+
+    <div class="card">
+        <div class="card-image" (click)="redirectToPlanets()">
+            <img src="/planets.webp" alt="">
+        </div>
+        <span class="card-title"><img src="{{planet}}" height="30" style="margin-bottom: -5px;"> Planetas</span>
+    </div>
+</div>

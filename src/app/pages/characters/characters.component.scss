@@ -1,0 +1,68 @@
+@import url(../../app.component.scss);
+
+.paginator, .data-filter, .card-container, .card, .card-content {
+    display: flex !important; justify-content: center; align-items: center; 
+}
+
+.title { margin-top: 5px; }
+
+.data-filter {
+    flex-wrap: wrap; justify-content: space-evenly; text-align: center;
+    padding: 1em; padding-bottom: 0;
+    background-color: var(--darkBlue);
+    /* Input */
+    #character_name, .dropdown-content, .input-field.outlined input:focus:not([readonly]) + label { 
+        background-color: var(--platinum); border: 2px solid var(--vampireDark); 
+    } 
+    .input-field {
+        flex-basis: 100%;      
+        input { 
+            font-size: 18px; font-weight: bold;
+            color: var(--darkBlue); 
+        }         
+        label { color: var(--vampireDark); opacity: .5; }        
+    }
+    .input-field.outlined input:focus:not([readonly]) + label { 
+        opacity: 1; border-bottom: 0;
+    }
+    /* Dropdowns */
+    .dropdown-trigger { 
+        font-size: 16px; text-transform: uppercase; font-weight: bold;
+        margin-top: 10px; color: var(--platinum); transition: .3s;
+        &:hover { color: var(--pastelOrange); }          
+    }
+    .dropdown-content {
+        padding: 0.5rem; border-radius: 0 0 5px 5px;
+        li {
+            min-height: 28px;
+            font-size: 14px; text-align: justify; color: var(--vampireDark);
+            border-bottom: 1px solid var(--darkBlue);
+            &:last-child { border-bottom: 0; }
+            &:hover { background-color: var(--deepCarrotOrange); color: #FFF; }
+        }
+    }
+    .reset-filters {
+        height: 40px;
+        padding-top: 12px; margin-top: 10px; cursor: pointer; 
+        font-size: 12px; color: var(--pastelOrange);
+    }
+}
+
+.card-container {
+    flex-wrap: wrap; gap: 10px;
+    padding: 1em 0.5rem;
+    .card {
+        width: 255px; height: 725px;        
+        .card-content {      
+            border: 1px solid var(--platinum); border-radius: 0 0 5px 5px;        
+            p {
+                width: 100%;     
+                &:nth-child(3) { border-bottom: 0; }            
+                span {
+                    color: var(--deepCarrotOrange); float: left;
+                    font-size: 13px; font-weight: bold; 
+                }
+            }
+        }
+    }
+}

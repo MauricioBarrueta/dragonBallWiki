@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    padding: 0; margin: 0; box-sizing: border-box;
+    font-family: "Roboto Mono", monospace, FontAwesome; font-optical-sizing: auto; font-weight: 400; font-style: normal;
+}
+
+html, body {
+    width: 100%; max-width: 100%; height: 100%;
+}
+
+h1 { cursor: default; }
+.disable { pointer-events: none !important; opacity: .5 !important; }
+
+body { 
+    background-color: var(--darkBlue);
+}
+
+:root {
+    /* Color Palette */
+    --darkBlue: #1c4595;
+    --deepCarrotOrange: #e76a24;
+    --vampireDark: #01080a;
+    --platinum: #e7e5e8;
+    --pastelOrange: #fbbc42;
+}

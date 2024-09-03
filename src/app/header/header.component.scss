@@ -1,0 +1,12 @@
+header {
+    position: relative; z-index: 2;
+    padding: 5px; text-align: center;
+    background-color: var(--deepCarrotOrange);
+
+    img {
+        width: 75px; scale: 1.2; 
+        cursor: pointer; transition: 0.35s;
+        filter: drop-shadow(0 0 3px var(--vampireDark));
+        &:hover { filter: drop-shadow(0 0 5px var(--vampireDark)); }
+    }
+}

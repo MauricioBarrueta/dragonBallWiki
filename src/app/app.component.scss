@@ -1,0 +1,133 @@
+/* Disable element Class */
+.disable { pointer-events: none; opacity: .5; }
+
+/* Main Page - Back-to Button - Paginator - Alert */
+.content, .back-btn, .paginator, .alert-text {
+    width: 100%; display: inline-block; 
+    text-align: center; font-size: 15px; color: var(--platinum);
+    padding: 1em; cursor: pointer; transition: .25s;
+    border-top: 10px double var(--darkBlue); border-bottom: 10px double var(--darkBlue);
+    background-color: var(--deepCarrotOrange); 
+    &:hover { color: var(--darkBlue); }
+}
+
+/* Back-to Button */
+.back-btn { 
+    font-size: 16px; line-height: 1.75;
+    &:hover img {
+        filter: invert(24%) sepia(62%) saturate(1306%) hue-rotate(195deg) brightness(90%) contrast(103%);
+    }
+    img {
+        transition: .25s;
+        filter: invert(100%); margin-bottom: -9px; margin-inline: 5px;        
+    }
+}
+
+/* Paginator */
+.paginator {
+    position: relative; justify-content: space-between !important;
+    cursor: default;
+    .btn {
+        padding: 1em; 
+        background-color: var(--vampireDark); color: var(--platinum);
+        &:hover { background-color: var(--darkBlue); }
+    }   
+    span {
+        font-size: 16px; font-weight: bold; text-transform: uppercase;
+        color: var(--platinum); user-select: none;     
+    }
+    .to-first {
+        position: absolute; bottom: 0; left: 50%; transform: translate(-50%, -50%);        
+        font-size: 9px; color: var(--vampireDark);        
+        cursor: pointer; transition: all 0.25s;
+        &:hover { letter-spacing: 1px; }
+    }
+}
+
+/* Component Title */
+.title {
+    font-size: 18px; text-transform: uppercase; text-align: center; font-weight: bold; letter-spacing: 5px;
+    margin: 0; padding: 0.7rem; color: var(--pastelOrange);     
+    img, i { 
+        filter: invert(84%) sepia(48%) saturate(859%) hue-rotate(325deg) brightness(103%) contrast(97%); 
+        margin-bottom: -5px; margin-inline: 10px;
+    }        
+    i { filter: none; color: var(--pastelOrange); }       
+}
+
+/* Alert Text */
+.alert-text {
+    font-size: 14px; letter-spacing: 2px; line-height: 1.75;
+    margin: 10px 0; padding: 0.5rem;
+    background-color: var(--platinum); color: crimson;
+    pointer-events: none;
+}
+
+/* Cards */
+.card, .card-content, .card-reveal {
+    display: flex !important; justify-content: center; align-items: center;
+}
+.card {    
+    flex-direction: column;
+    padding: 1em; cursor: default;
+    box-shadow:  0px 0px 10px 0px var(--vampireDark);
+    background-color: var(--vampireDark); border: 1px solid var(--platinum);
+    .card-title {
+        width: 100%;
+        margin-bottom: 10px; color: var(--platinum);
+        font-size: 17.5px; text-align: center;
+    }
+    .card-image {
+        width: 100%; text-align: center;
+        background-color: var(--platinum); cursor: pointer !important;
+        border-radius: 5px 5px 0 0 !important;
+
+        &:hover img { 
+            filter: drop-shadow(0 0 8px var(--vampireDark)); 
+            opacity: .95; scale: .98;
+        }        
+        img { 
+            height: 500px; transition: 0.3s;
+            border-radius: 5px;
+            object-fit: contain; filter: drop-shadow(0 0 5px rgba(1, 8, 10, .75));           
+        }
+    }
+    .card-content, .card-image {
+        width: 100%; flex-grow: 1; flex-wrap: wrap; justify-content: space-between;
+        padding: 0.5rem !important; color: var(--deepCarrotOrange);
+        .stats {
+            color: var(--deepCarrotOrange); float: left;
+            font-size: 13px; font-weight: bold; 
+        }
+        p {
+            color: var(--platinum); border-bottom: 1px dashed var(--platinum); padding-bottom: 5px;
+            font-size: 14px; font-weight: bold; text-align: right;            
+        }
+        /* Details Button */
+        .details {
+            width: 100%;
+            cursor: pointer; transition: 0.25s;
+            padding: 0.5rem 0; border-radius: 5px;
+            background-color: transparent; border: 1px solid var(--platinum); color: var(--platinum);
+            text-align: center; font-size: 14px; font-weight: bold; line-height: 1.25;
+            &:hover {
+                border-color: var(--pastelOrange); color: var(--pastelOrange);
+            }
+        }        
+    }
+    .card-reveal {
+        flex-direction: column; padding: 1em !important;
+        .card-title {
+            width: 100%;
+            padding: 0.5rem; border-radius: 5px 5px 0 0; margin-bottom: 0;
+            background-color: var(--platinum); color: var(--vampireDark);
+        }
+        .card-desc {
+            flex-grow: 1; 
+            padding: 1em;
+            font-size: 14px; text-align: justify; line-height: 1.85;
+            border: 1px solid var(--platinum); border-radius: 0 0 5px 5px;
+        }
+    }
+    .right { color: var(--deepCarrotOrange) !important; }
+}
