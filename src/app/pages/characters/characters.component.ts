@@ -53,7 +53,7 @@ export class CharactersComponent implements OnInit, OnDestroy {
   /* Se obtiene la lista de personajes por página y límite */
   getCharactersByPage() {
     this.router.navigate(['characters-list'], { queryParams: { page: `${this.page}` } }) 
-    this.gender = '', this.race = '', this.affiliation = '', this.title = 'Lista de personajes'
+    this.name = '', this.gender = '', this.race = '', this.affiliation = '', this.title = 'Lista de personajes'
 
     this.charService.getCharactersByPageLimit(this.page, this.limit)
       .pipe(
@@ -72,7 +72,7 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
   /* Se obtiene el/los personajes que coincidan con el nombre ingresado */
   getCharacterByName() {
-    this.name !== '' ? this.router.navigate(['characters-list'], { queryParams: { name: `${this.name}` } })
+    this.name !== '' ? this.router.navigate(['characters-list'], { queryParams: { name: `${this.name}` } }) 
       : this.getCharactersByPage()
     this.charService.getCharacterByName(this.name)
       .pipe(     

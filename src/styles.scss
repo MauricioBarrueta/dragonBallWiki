@@ -11,6 +11,7 @@ html, body {
 
 h1 { cursor: default; }
 .disable { pointer-events: none !important; opacity: .5 !important; }
+.hide-filters { display: none !important; }
 
 body { 
     background-color: var(--darkBlue);

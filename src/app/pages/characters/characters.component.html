@@ -17,23 +17,27 @@
   </div>
   
   <!-- Dropdowns -->
-  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='genreDrop'
-    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7; Filtrar por género</a>
-  <ul id='genreDrop' class='dropdown-content'>
-    <li *ngFor="let gender of genderList$; let i = index" (click)="getGender(i)">&#xf0da; {{gender}}</li>    
-  </ul>  
-  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='raceDrop'
-    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7;  Filtrar por raza</a>
-  <ul id='raceDrop' class='dropdown-content'>
-    <li *ngFor="let race of raceList$; let i = index" (click)="getRace(i)">&#xf0da; {{race}}</li>    
-  </ul> 
-  <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='affiliationDrop'
-    [ngClass]="characters$.length > 0 ? '' : 'disable'">&#xf0d7; Filtrar por afiliación</a>
-  <ul id='affiliationDrop' class='dropdown-content'>
-    <li *ngFor="let affiliation of affiliationList$; let i = index" (click)="getAffiliation(i)">&#xf0da; {{affiliation}}</li>    
-  </ul>
-  <!-- Reset Filters -->
-  <a class="reset-filters" *ngIf="gender !== '' || race !== '' || affiliation !== ''" (click)="getCharactersByPage()">Borrar filtros &#xf2ed;</a>
+  <div class="drop-lists" [ngClass]="name !== '' ? 'hide-filters' : ''">
+    <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='genreDrop'
+      [ngClass]="characters$.length > 0 || name == '' ? '' : 'disable'">&#xf0d7; Filtrar por género</a>
+    <ul id='genreDrop' class='dropdown-content'>
+      <li *ngFor="let gender of genderList$; let i = index" (click)="getGender(i)">&#xf0da; {{gender}}</li>
+    </ul>
+    <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href" data-target='raceDrop'
+      [ngClass]="characters$.length > 0 || name == '' ? '' : 'disable'">&#xf0d7; Filtrar por raza</a>
+    <ul id='raceDrop' class='dropdown-content'>
+      <li *ngFor="let race of raceList$; let i = index" (click)="getRace(i)">&#xf0da; {{race}}</li>
+    </ul>
+    <a class='dropdown-trigger btn' href="javascript:window.location.href=window.location.href"
+      data-target='affiliationDrop' [ngClass]="characters$.length > 0 || name == '' ? '' : 'disable'">&#xf0d7; Filtrar por
+      afiliación</a>
+    <ul id='affiliationDrop' class='dropdown-content'>
+      <li *ngFor="let affiliation of affiliationList$; let i = index" (click)="getAffiliation(i)">&#xf0da; {{affiliation}}
+      </li>
+    </ul>
+    <!-- Reset Filters -->
+    <a class="reset-filters" *ngIf="gender !== '' || race !== '' || affiliation !== ''" (click)="getCharactersByPage()">Borrar filtros &#xf2ed;</a>
+  </div>
 </div>
 
 <!-- Alert Text -->

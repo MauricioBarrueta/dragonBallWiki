@@ -1,7 +1,7 @@
 @import url(../../app.component.scss);
 
-.paginator, .data-filter, .card-container, .card, .card-content {
-    display: flex !important; justify-content: center; align-items: center; 
+.paginator, .data-filter, .drop-lists, .card-container, .card, .card-content {
+    display: flex; justify-content: center; align-items: center; 
 }
 
 .title { margin-top: 5px; }
@@ -26,26 +26,29 @@
         opacity: 1; border-bottom: 0;
     }
     /* Dropdowns */
-    .dropdown-trigger { 
-        font-size: 16px; text-transform: uppercase; font-weight: bold;
-        margin-top: 10px; color: var(--platinum); transition: .3s;
-        &:hover { color: var(--pastelOrange); }          
-    }
-    .dropdown-content {
-        padding: 0.5rem; border-radius: 0 0 5px 5px;
-        li {
-            min-height: 28px;
-            font-size: 14px; text-align: justify; color: var(--vampireDark);
-            border-bottom: 1px solid var(--darkBlue);
-            &:last-child { border-bottom: 0; }
-            &:hover { background-color: var(--deepCarrotOrange); color: #FFF; }
+    .drop-lists {
+        width: 100%; justify-content: space-evenly !important;
+        .dropdown-trigger { 
+            font-size: 16px; text-transform: uppercase; font-weight: bold;
+            margin-top: 10px; color: var(--platinum); transition: .3s;
+            &:hover { color: var(--pastelOrange); }          
         }
-    }
-    .reset-filters {
-        height: 40px;
-        padding-top: 12px; margin-top: 10px; cursor: pointer; 
-        font-size: 12px; color: var(--pastelOrange);
-    }
+        .dropdown-content {
+            padding: 0.5rem; border-radius: 0 0 5px 5px;
+            li {
+                min-height: 28px;
+                font-size: 14px; text-align: justify; color: var(--vampireDark);
+                border-bottom: 1px solid var(--darkBlue);
+                &:last-child { border-bottom: 0; }
+                &:hover { background-color: var(--deepCarrotOrange); color: #FFF; }
+            }
+        }
+        .reset-filters {
+            height: 40px;
+            padding-top: 12px; margin-top: 10px; cursor: pointer; 
+            font-size: 12px; color: var(--pastelOrange);
+        }
+    }    
 }
 
 .card-container {
