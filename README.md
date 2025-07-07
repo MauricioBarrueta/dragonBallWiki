@@ -1,11 +1,10 @@
-🇲🇽 Este sitio web permite consultar la información detallada de varios de los personajes del universo de Dragon Ball, donde además de poder filtrarlos por nombre, es posible filtrarlos por género, afiliación y raza, además de obtener los datos del planeta de donde es originario cada uno de ellos.
+🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Materialize, publicado con Firebase Hosting y conectado a la API de Dragon Ball Super (web.dragonball-api.com).
 
-🇺🇸 This website allows you to consult the detailed information of many of the characters of the Dragon Ball universe, where besides being able to filter them by name, it's possible to filter them by gender, affiliation and race. The data of the planet from which each one of them originates is also shown.
+🇺🇸 Website developed with Angular and TypeScript, SCSS and Materialize, published with Firebase Hosting and connected to the Dragon Ball Super API (web.dragonball-api.com).
 
 🔗 https://dragonballwiki-e14b1.web.app/main-page
 
-
-![dbWiki](https://github.com/user-attachments/assets/65f9abb8-0e6d-4ced-a73e-0905a8a6f020)
+![dragonball](https://github.com/user-attachments/assets/1584cbf7-0535-4c41-874e-1d605b7cfc60)
 
 
 # DragonBallDB
