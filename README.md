@@ -4,7 +4,8 @@
 
 🔗 https://dragonballwiki-e14b1.web.app/main-page
 
-![dragonball](https://github.com/user-attachments/assets/1584cbf7-0535-4c41-874e-1d605b7cfc60)
+
+<img width="1349" height="653" alt="dragonball" src="https://github.com/user-attachments/assets/8823f123-dcaf-4a33-b6d9-612d880c3f2c" />
 
 
 # DragonBallDB
