@@ -1,3 +1,13 @@
+🇲🇽 Sitio web desarrollado con Angular y TypeScript, SCSS y Materialize, publicado con Firebase Hosting y conectado a la API de Dragon Ball Super (web.dragonball-api.com).
+
+🇺🇸 Website developed with Angular and TypeScript, SCSS and Materialize, published with Firebase Hosting and connected to the Dragon Ball Super API (web.dragonball-api.com).
+
+🔗 https://dragonballwiki-e14b1.web.app/main-page
+
+
+<img width="1349" height="653" alt="dragonball" src="https://github.com/user-attachments/assets/8823f123-dcaf-4a33-b6d9-612d880c3f2c" />
+
+
 # DragonBallDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
