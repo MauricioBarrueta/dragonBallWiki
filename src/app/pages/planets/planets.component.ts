@@ -3,7 +3,6 @@ import { PlanetsService } from './service/planets.service';
 import { Meta, Planets, planetsResponse } from './interface/planets';
 import { catchError, Subject, takeUntil, tap, throwError } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-planets',
@@ -21,10 +20,6 @@ export class PlanetsComponent implements OnInit, OnDestroy {
   prev: string = ''
   last: string = ''
   alert!: string
-
-  /* Planet Icon */
-  icon: string = `${environment.planetIcon}`
-  icon2: string = `${environment.planetIcon2}`
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => { this.page = params['page'] === undefined ? 1 : params['page'] }) 

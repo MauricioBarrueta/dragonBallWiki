@@ -9,20 +9,16 @@
 
 .planets-container {   
     .card {
-        width: 600px; height: fit-content;       
+        width: 650px; height: fit-content;       
         .card-image {
-            img { 
-                height: 500px; object-fit: contain; 
-            }
+            img { height: 400px; /*object-fit: contain !important;*/ }
         }
         .card-content {
-            justify-content: center; color: var(--deepCarrotOrange);       
-            a { 
+            justify-content: center; color: var(--deepCarrotOrange);      
+            a {                 
                 font-size: 14px; color: var(--platinum);
-                padding: 5px 10px; border-right: 1px dashed var(--platinum);
-                transition: .3s; cursor: pointer;
+                padding: 5px 10px; transition: .3s; cursor: pointer;
                 &:hover { color: var(--pastelOrange); }
-                &:last-child { border-right: 0; }
             }  
         }        
     }

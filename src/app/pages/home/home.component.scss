@@ -8,7 +8,7 @@
 
 .content {
     display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px;
-    min-height: 68%; cursor: default;
+    height: 85%; cursor: default;
     background-color: var(--darkBlue); background: url('/background.webp') no-repeat bottom right / auto;
     
     .card {

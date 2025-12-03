@@ -5,23 +5,18 @@
 .card-container {
     padding: 1em;
     .card {
-        width: 600px; height: fit-content !important; 
-        .card-image {   
-            padding-bottom: 0 !important;   
-            .ki-stats {
-                margin-top: 10px; padding-top: 5px;
-                border-top: 1px dashed var(--vampireDark);
-                .stats {
-                    font-size: 15px; float: none;
-                }
-                p { 
-                    color: var(--vampireDark);
-                    display: inline-block; margin-left: 10px; 
-                }               
-            }            
-        }
+        width: 600px; height: fit-content !important;     
         .card-content {
             justify-content: center !important; text-align: center;
+            .ki-stats {
+                width: 100%;
+                border-bottom: 1px dashed var(--platinum);
+                p {
+                    width: fit-content; display: inline-block;
+                    color: var(--platinum); font-weight: normal; font-size: 14px;
+                    margin-left: 10px; border-bottom: 0;
+                }               
+            }
             .image-buttons, .planet-btn { 
                 margin: 5px 0 auto; font-size: 14px;
             }
@@ -29,19 +24,14 @@
             .image-buttons a, .planet-btn {
                 color: var(--platinum);
                 padding: 5px 10px; cursor: pointer; transition: .3s;
-                border-right: 1px dashed var(--platinum);
                 &:hover { color: var(--pastelOrange); }
-                &:last-child { border-right: 0; }  
             } 
             /* Origin Planet Button */
             .planet-btn {
                 width: 100%; 
                 padding-top: 0.5rem; border-top: 1px dashed var(--platinum);
                 line-height: 1.5;
-                img { 
-                    filter: invert(46%) sepia(91%) saturate(1329%) hue-rotate(346deg) brightness(94%) contrast(93%); 
-                    margin-bottom: -6px; 
-                }               
+                i { color: var(--deepCarrotOrange); }             
             }
         }
     }    

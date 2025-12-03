@@ -3,7 +3,6 @@ import { CharactersService } from './service/characters.service';
 import { catchError, Subject, takeUntil, tap, throwError } from 'rxjs';
 import { apiResponse, Characters, Meta } from './interface/characters';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-characters',
@@ -35,8 +34,6 @@ export class CharactersComponent implements OnInit, OnDestroy {
 
   title: string = ''
   alert: string = ''
-  icon1: string = `${environment.character}`
-  icon2: string = `${environment.character2}`
     
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => { this.page = params['page'] === undefined ? 1 : params['page'] }) 

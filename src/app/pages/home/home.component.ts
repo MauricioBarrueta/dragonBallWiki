@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +9,6 @@ import { environment } from '../../../environments/environment.development';
 export class HomeComponent {
 
   constructor(private router: Router) {}
-
-  planet: string = `${environment.planetIcon}`
-  character: string = `${environment.character}`
 
   redirectToCharacters() {
     this.router.navigate(['characters-list'])

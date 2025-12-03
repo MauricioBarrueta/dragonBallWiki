@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Subject, takeUntil, tap, throwError } from 'rxjs';
 import { Character, OriginPlanet, Transformation } from './interface/character';
 import { CharactersService } from '../service/characters.service';
-import { environment } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-character',
@@ -25,9 +24,6 @@ export class CharacterComponent implements OnInit, OnDestroy {
   nameValue: string = ''
   imageValue: string = ''
   kiValue: string = ''
-
-  planet: string = `${environment.planetIcon2}`
-  list: string = `${environment.character}`
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => { this.id = params['id'], this.page = params['from'] === undefined ? 1 : params['from'] })    

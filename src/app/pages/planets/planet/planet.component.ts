@@ -3,7 +3,6 @@ import { PlanetsService } from '../service/planets.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { Character, Planet } from './interface/planet';
-import { environment } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-planet',
@@ -20,8 +19,6 @@ export class PlanetComponent implements OnInit {
   characters$: Character[] = []
 
   page!: number
-  icon: string = `${environment.planetIcon2}`
-  icon2: string = `${environment.planetIcon}`
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => { this.id = params['planet'], 

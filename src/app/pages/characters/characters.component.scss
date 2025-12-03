@@ -4,7 +4,7 @@
     display: flex; justify-content: center; align-items: center; 
 }
 
-.title { margin-top: 5px; }
+// .title { margin-top: 10px; }
 
 .data-filter {
     flex-wrap: wrap; justify-content: space-evenly; text-align: center;
@@ -17,17 +17,18 @@
     .input-field {
         flex-basis: 100%;      
         input { 
+            height: 52px;
             font-size: 18px; font-weight: bold;
             color: var(--darkBlue); 
         }         
-        label { color: var(--vampireDark); opacity: .5; }        
+        label { color: var(--vampireDark); opacity: .5; font-size: 14px; }        
     }
     .input-field.outlined input:focus:not([readonly]) + label { 
         opacity: 1; border-bottom: 0;
     }
     /* Dropdowns */
     .drop-lists {
-        width: 100%; justify-content: space-evenly !important;
+        width: 100%; justify-content: space-around !important;
         .dropdown-trigger { 
             font-size: 16px; text-transform: uppercase; font-weight: bold;
             margin-top: 10px; color: var(--platinum); transition: .3s;
@@ -36,9 +37,10 @@
         .dropdown-content {
             padding: 0.5rem; border-radius: 0 0 5px 5px;
             li {
-                min-height: 28px;
-                font-size: 14px; text-align: justify; color: var(--vampireDark);
-                border-bottom: 1px solid var(--darkBlue);
+                min-height: 28px; margin-top: 5px;
+                font-size: 12px; text-align: left; color: var(--vampireDark);
+                border-bottom: 1px dashed var(--darkBlue);
+                &:first-child { margin-top: 0; }
                 &:last-child { border-bottom: 0; }
                 &:hover { background-color: var(--deepCarrotOrange); color: #FFF; }
             }
@@ -52,15 +54,21 @@
 }
 
 .card-container {
-    flex-wrap: wrap; gap: 10px;
-    padding: 1em 0.5rem;
+    flex-wrap: wrap; gap: 10px;  padding: 1em 0.5rem;
     .card {
-        width: 255px; height: 725px;        
+        width: 255px;         
+        .card-image {
+            padding: 1em !important; 
+            img { height: 400px; }
+        }
+        .card-image, .card-content { flex-grow: 0; }        
         .card-content {      
             border: 1px solid var(--platinum); border-radius: 0 0 5px 5px;        
             p {
-                width: 100%;     
-                &:nth-child(3) { border-bottom: 0; }            
+                width: 100%; 
+                padding: 0.5rem 0;   
+                &:nth-child(3) { border-bottom: 0; }        
+                font-size: 12px;    
                 span {
                     color: var(--deepCarrotOrange); float: left;
                     font-size: 13px; font-weight: bold; 
